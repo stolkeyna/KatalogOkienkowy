@@ -34,7 +34,7 @@ namespace AplikacjaOkienkowa
             };
 
             EtykietaLiczbaProduktow.Text = $"Liczba produktów: {products.Count}";
-            EtykietaWartoscMagazynu.Text = $"Wartosc magazynu: {Product.ObliczWartoscMagazynu(products)}";
+            EtykietaWartoscMagazynu.Text = $"Wartosc magazynu: {Product.ObliczWartoscMagazynu(products):C}";
         }
     }
 }
