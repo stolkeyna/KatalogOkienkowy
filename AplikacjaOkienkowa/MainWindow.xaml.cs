@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml.Linq;
 
 namespace AplikacjaOkienkowa
 {
@@ -19,6 +20,20 @@ namespace AplikacjaOkienkowa
         public MainWindow()
         {
             InitializeComponent();
+
+            //stwórz listę kilku produktów
+            List<Product> products = new List<Product>
+            {
+                new Product("Mleko", 2.50, "Nabiał", 5, 0),
+                new Product("Yogurt", 10.00, "Nabiał", 5, 0),
+                new Product("Chleb", 1.00, "Pieczywo", 2, 0),
+                new Product("Herbata", 4.50, "Napoje", 10, 0),
+                new Product("Sok", 6.00, "Napoje", 3, 0),
+                new Product("Chipsy", 7.50, "Przekąski", 10, 1),
+                new Product("Czekolada", 12.50, "Słodycze", 5, 1)
+            };
+
+            EtykietaLiczbaProduktow.Text = $"Liczba produktów: {products.Count}";
         }
     }
 }
