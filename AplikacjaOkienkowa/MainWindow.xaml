@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:AplikacjaOkienkowa"
         mc:Ignorable="d"
         Title="Katalog okienkowy" Height="600" Width="800">
-    <StackPanel Margin="20">
+    <StackPanel x:Name="GlownyPanel"
+                Margin="20">
         <TextBlock Text="Katalog produktów"
                    FontSize="24"
                    FontWeight="Bold"    />
