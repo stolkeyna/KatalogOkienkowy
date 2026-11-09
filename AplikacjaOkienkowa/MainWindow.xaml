@@ -1,4 +1,5 @@
-﻿<Window x:Class="AplikacjaOkienkowa.MainWindow"
+﻿<!--Window może mieć tylko jednego potomka-->
+    <Window x:Class="AplikacjaOkienkowa.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -12,26 +13,66 @@
             <GradientStop Color="#FF2D7542" Offset="1"/>
         </LinearGradientBrush>
     </Window.Background>
-    <StackPanel x:Name="GlownyPanel"
-                Margin="20">
-        <TextBlock Text="Katalog produktów"
-                   FontSize="24"
-                   FontWeight="Bold" FontFamily="Verdana"    />
-        <StackPanel x:Name="DrugiPanel" Orientation="Horizontal" Margin="0, 10, 0, 0">
+        <!--Nowy layout oparty na gridzie-->
+    <Grid Margin="10">
+        <!--Trzy wierze, w tym środkowy o dynamicznym rozmiarze-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <!-- Kolumny: lewa na całą szerokość, a prawy na tyle ile musi-->
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+        <!--Tekst ze starego layoutu-->
+        <TextBlock Grid.Row="0" Grid.Column="0"
+           Text="Katalog produktów"
+           FontSize="24"
+           FontWeight="Bold" FontFamily="Verdana"/>
+        <!--Nowy guzik-->
+        <Button Grid.Row="0" Grid.Column="1"
+                Content="Odśwież"
+                Width="100"/>
+        <!--Lista produktow - placeholder, rozciągnieta na dwie kolumny-->
+        <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+                   Text="Tu pojawi się lista produktów"
+                   FontSize="18"
+                   Margin="0,10,0,0"/>
+        <StackPanel Grid.Row="2" Grid.Column="0" 
+                    Orientation="Horizontal" HorizontalAlignment="Right"
+                    Margin="0,10,0,0">
             <TextBlock Text="Produktów: "
                     FontSize="14" FontFamily="Verdana" FontStyle="Italic"/>
             <TextBlock x:Name="EtykietaLiczbaProduktow"
                     Text="0"
-                    FontSize="14" TextDecorations="Underline" FontFamily="Verdana"/>
-        </StackPanel>
-        <StackPanel x:Name="TrzeciPanel" Orientation="Horizontal" Margin="0, 10, 0, 0">
+                    FontSize="14" TextDecorations="Underline" FontFamily="Verdana" Margin="0,0,10,0"/>
             <TextBlock Text="Wartość magazynu: "
-                FontSize="14" FontStyle="Italic" FontFamily="Verdana"/>
+                    FontSize="14" FontStyle="Italic" FontFamily="Verdana"/>
             <TextBlock x:Name="EtykietaWartoscMagazynu"
-                Text="0"
-                FontSize="14" FontFamily="Verdana" TextDecorations="Underline"/>
+                    Text="0"
+                    FontSize="14" FontFamily="Verdana" TextDecorations="Underline" Margin="0,0,10,0"/>
+            <!--Buttony-->
+            <Button Content="Dodaj"
+                    Width="100"
+                    Margin="0,0,10,0"/>
+            <Button Content="Uzuń"
+                    Width="100"
+                    Margin="0,0,10,0"/>
+            <Button Content="Zamknij"
+                    Width="100"
+                    Margin="0,0,10,0"/>
         </StackPanel>
-        <!-- W środku buttona można umieścić textblock -->
+    </Grid>
+    <!--
+    <StackPanel x:Name="GlownyPanel"
+                Margin="20">
+        
+        <StackPanel x:Name="DrugiPanel" Orientation="Horizontal" Margin="0, 10, 0, 0">
+            
+        </StackPanel>
+ W środku buttona można umieścić textblock
         <Button Margin="10" HorizontalAlignment="Center" Padding="5">
             <StackPanel Orientation="Horizontal">
                 <Image Source="pack://application:,,,/Images/add.png" 
@@ -44,7 +85,7 @@
                            VerticalAlignment="Center"/>
             </StackPanel>
         </Button>
-        <!-- wewnątrz StackPanel możemy umieszczyć dowolne elementy, np. TextBox, ComboBox, ListBox itp., ale też całego grida -->
+ wewnątrz StackPanel możemy umieszczyć dowolne elementy, np. TextBox, ComboBox, ListBox itp., ale też całego grida 
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
@@ -60,4 +101,6 @@
             <Button Grid.Column="1" Grid.Row="1" Content="Button 4"/>
         </Grid>
     </StackPanel>
+    -->
+    
 </Window>
