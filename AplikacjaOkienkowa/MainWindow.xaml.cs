@@ -33,8 +33,8 @@ namespace AplikacjaOkienkowa
                 new Product("Czekolada", 12.50, "Słodycze", 5, 1)
             };
 
-            EtykietaLiczbaProduktow.Text = $"Liczba produktów: {products.Count}";
-            EtykietaWartoscMagazynu.Text = $"Wartosc magazynu: {Product.ObliczWartoscMagazynu(products):C}";
+            EtykietaLiczbaProduktow.Text = $"{products.Count}";
+            EtykietaWartoscMagazynu.Text = $"{Product.ObliczWartoscMagazynu(products):C}";
 
             TextBlock dopisek = new TextBlock();
             dopisek.Text = "To zostało dodane bezpośrednie w kodzie C#";
