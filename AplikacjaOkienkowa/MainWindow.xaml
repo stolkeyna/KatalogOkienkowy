@@ -33,10 +33,12 @@
            FontWeight="Bold" FontFamily="Verdana"/>
         <!--Nowy guzik-->
         <Button Grid.Row="0" Grid.Column="1"
+                x:Name="ButtonOdswiez"
                 Content="Odśwież"
                 Margin="10"/>
         <!--Lista produktow - placeholder, rozciągnieta na dwie kolumny-->
         <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+                   x:Name="TextblockListaProduktow"
                    Text="Tu pojawi się lista produktów"
                    FontSize="18"
                    Margin="0,10,0,0"/>
@@ -47,23 +49,35 @@
                 <RowDefinition Height = "auto"/>
                 <RowDefinition Height = "auto"/>
                 <RowDefinition Height = "auto"/>
+                <RowDefinition Height = "auto"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <TextBlock Grid.Row="0" Grid.Column="0" Text="Nazwa produktu:" VerticalAlignment="Center" Margin="0, 10"/>
-            <TextBox Grid.Row="0" Grid.Column="1" Margin="0, 10"/>
+            <!--Nazwa-->
+            <TextBlock Grid.Row="0" Grid.Column="0" 
+                       Text="Nazwa produktu:" 
+                       VerticalAlignment="Center" 
+                       Margin="0, 10"/>
+            <TextBox x:Name ="TextboxNazwaProduktu" Grid.Row="0" Grid.Column="1" Margin="0, 10"/>
+            <!--Cena-->
             <TextBlock Grid.Row="1" Grid.Column="0" Text="Cena:" VerticalAlignment="Center" Margin="0, 10"/>
-            <TextBox Grid.Row="1" Grid.Column="1" Margin="0, 10"/>
-            <TextBlock Grid.Row="2" Grid.Column="0" Text="Kategoria:" VerticalAlignment="Center" Margin="0, 10"/>
-            <ComboBox Grid.Row="2" Grid.Column="1" Margin="0, 10">
+            <TextBox x:Name ="TextboxCenaProduktu" Grid.Row="1" Grid.Column="1" Margin="0, 10"/>
+            <!--Ilość-->
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="Ilość:" VerticalAlignment="Center" Margin="0, 10"/>
+            <TextBox x:Name ="TextboxIloscProduktu" Grid.Row="2" Grid.Column="1" Margin="0, 10"/>
+            <!--Kategoria-->
+            <TextBlock Grid.Row="3" Grid.Column="0" Text="Kategoria:" VerticalAlignment="Center" Margin="0, 10"/>
+            <ComboBox x:Name ="ComboboxKategoriaProduktu" Grid.Row="3" Grid.Column="1" Margin="0, 10">
                 <ComboBoxItem Content="Kategoria 1"/>
                 <ComboBoxItem Content="Kategoria 2"/>
                 <ComboBoxItem Content="Kategoria 3"/>
             </ComboBox>
-            <CheckBox Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" Content="Produkt dostępny" Margin="0, 10"/>
-            <Button Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Content="Dodaj" />
+            <!--Dostępność-->
+            <CheckBox Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" Content="Produkt dostępny" Margin="0, 10"/>
+            <!--Dodaj-->
+            <Button x:Name="ButtonDodaj" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Content="Dodaj" />
         </Grid>
         <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
             <Grid.RowDefinitions>
@@ -87,9 +101,11 @@
                         Text="0"
                         FontSize="14" FontFamily="Verdana" TextDecorations="Underline" Margin="0,0,10,0"/>
             <Button Grid.Row="1" Grid.Column="2" Content="Usuń"
+                    x:Name="ButtonUsun"
                     Width="auto"
                     Margin="0,0,10,0"/>
             <Button Grid.Row="1" Grid.Column="3" Content="Zamknij"
+                    x:Name="ButtonZamknij"
                     Width="auto"
                     Margin="0,0,10,0"/>
         </Grid>
