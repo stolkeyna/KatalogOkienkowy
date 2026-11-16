@@ -24,7 +24,7 @@
         <Grid.ColumnDefinitions>
             <!-- Kolumny: lewa na całą szerokość, a prawy na tyle ile musi-->
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="300"/>
         </Grid.ColumnDefinitions>
         <!--Tekst ze starego layoutu-->
         <TextBlock Grid.Row="0" Grid.Column="0"
@@ -40,6 +40,56 @@
                    Text="Tu pojawi się lista produktów"
                    FontSize="18"
                    Margin="0,10,0,0"/>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height = "auto"/>
+                <RowDefinition Height = "auto"/>
+                <RowDefinition Height = "auto"/>
+                <RowDefinition Height = "auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Nazwa produktu:"/>
+            <TextBox Grid.Row="0" Grid.Column="1"/>
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="Cena:"/>
+            <TextBox Grid.Row="1" Grid.Column="1"/>
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="Kategoria:"/>
+            <TextBox Grid.Row="2" Grid.Column="1"/>
+            <Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Content="Dodaj"/>
+        </Grid>
+        <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Produktów: "
+                        FontSize="14" FontFamily="Verdana" FontStyle="Italic"/>
+            <TextBlock Grid.Row="1" Grid.Column="0" x:Name="EtykietaLiczbaProduktow"
+                        Text="0"
+                        FontSize="14" TextDecorations="Underline" FontFamily="Verdana" Margin="0,0,10,0"/>
+            <TextBlock Grid.Row="0" Grid.Column="1" Text="Wartość magazynu: "
+                        FontSize="14" FontStyle="Italic" FontFamily="Verdana"/>
+            <TextBlock Grid.Row="1" Grid.Column="1" x:Name="EtykietaWartoscMagazynu"
+                        Text="0"
+                        FontSize="14" FontFamily="Verdana" TextDecorations="Underline" Margin="0,0,10,0"/>
+            <Button Grid.Row="1" Grid.Column="2" Content="Usuń"
+                    Width="auto"
+                    Height="auto"
+                    Margin="0,0,10,0"/>
+            <Button Grid.Row="1" Grid.Column="3" Content="Zamknij"
+                    Width="auto"
+                    Height="auto"
+                    Margin="0,0,10,0"/>
+        </Grid>
+        <!--
         <StackPanel Grid.Row="2" Grid.Column="0" 
                     Orientation="Horizontal" HorizontalAlignment="Right"
                     Margin="0,10,0,0">
@@ -53,7 +103,7 @@
             <TextBlock x:Name="EtykietaWartoscMagazynu"
                     Text="0"
                     FontSize="14" FontFamily="Verdana" TextDecorations="Underline" Margin="0,0,10,0"/>
-            <!--Buttony-->
+         Buttony
             <Button Content="Dodaj"
                     Width="100"
                     Margin="0,0,10,0"/>
@@ -64,6 +114,7 @@
                     Width="100"
                     Margin="0,0,10,0"/>
         </StackPanel>
+        -->
     </Grid>
     <!--
     <StackPanel x:Name="GlownyPanel"
